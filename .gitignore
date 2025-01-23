@@ -2,7 +2,7 @@
 *.log
 *.classpath
 .project
-.settings
+/settings/
 .mvn
 
 /test-output/
