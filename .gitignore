@@ -1,10 +1,10 @@
 /target/
 *.log
-*.classpath
-.project
-/settings/
-.mvn
-
+/.classpath
+/*.project
+/*.settings
+/*.mvn
+/.metadata/
 /test-output/
-/reportsLib/
+/*.reportsLib/
 
