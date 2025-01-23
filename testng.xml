@@ -5,7 +5,6 @@
  <listeners>
 		<listener class-name="com.LAMBDATEST_Playground.Listeners.Listener"></listener>
 	</listeners>
-	
 	<test name="Tokenizer">
 		<classes>
 			<class name="com.LAMBDATEST_Playground.Runner.Runner"></class>
