@@ -1,1 +1,11 @@
 /target/
+*.log
+.classpath
+.project
+.settings
+.mvn
+*src/
+*test-output/
+*screenShots/
+*report/
+
