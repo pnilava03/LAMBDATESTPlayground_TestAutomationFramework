@@ -37,7 +37,7 @@ public class Driver {
 	 */
 
 	public WebDriver launchTheApplication(String browserName, String url)
-			throws FileNotFoundException, BrowserNotFoundException, EnvironmentTypeNotMatchException {
+			throws FileNotFoundException{
 		prop = new PropertiesFile();
 		driverFactory = new DriverFactory();
 		driver = driverFactory.init_Driver(browserName);

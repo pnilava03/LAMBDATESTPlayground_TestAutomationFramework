@@ -1,4 +1,4 @@
-@runScenario
+@onlythis
 Feature: User is on Login Page
 
   Background: 
@@ -13,4 +13,5 @@ Feature: User is on Login Page
       | userName            | passWord     |
       | nilava.pal@test.com | Kolkata8431@ |
     And user click on the "Login" button
-    Then user navigate to "My Account" page
+    Then user navigate to "Account" page
+    Then user will able to see "My Account" text

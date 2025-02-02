@@ -9,9 +9,10 @@ import java.util.Map;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-import com.LAMBDATEST_Playground.POM.MyAccountPage;
+import com.LAMBDATEST_Playground.POM.AccountPage;
 import com.LAMBDATEST_Playground.POM.DashboardPage;
 import com.LAMBDATEST_Playground.POM.LoginPage;
+import com.LAMBDATEST_Playground.POM.MyAccountPage;
 import com.LAMBDATEST_Playground.POM.RegisterAccountPage;
 import com.LAMBDATEST_Playground.Utils.ActionElement;
 import com.LAMBDATEST_Playground.Utils.DriverFactory;
@@ -29,7 +30,8 @@ public class LoginSteps {
 //	private DashboardPage dashboardPage;
 //	private RegisterAccountPage registerAccountPage;
 	private LoginPage loginpage;
-	private MyAccountPage accountPage;
+	private AccountPage accountPage;
+	private MyAccountPage myAccountPage;
 	
 
 	@When("user clicks on the {string} button")
@@ -88,10 +90,21 @@ public class LoginSteps {
 	@Then("user navigate to {string} page")
 	public void user_navigate_to_page(String expectedText) throws InterruptedException {
 		Thread.sleep(2000);
+		
 		accountPage=loginpage.getMyAccountPage();
-		String actualValue=accountPage.toString(loginpage.getmyAccountText());
+		String actualValue=accountPage.toString(accountPage.getAccountText());
 		Assert.assertEquals(expectedText, actualValue);
+		
+	
 
+	}
+	
+	
+	@Then("user will able to see {string} text")
+	public void user_will_able_to_see_text(String expectedText) throws InterruptedException {
+		Thread.sleep(2000);
+		String actualText=accountPage.getMyAccountPage().getMyAccountText(expectedText);
+		Assert.assertEquals(expectedText, actualText);
 	}
 
 }

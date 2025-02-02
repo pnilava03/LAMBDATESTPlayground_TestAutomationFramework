@@ -109,4 +109,6 @@ public class RegisterAccountPage extends PageUtility{
 		return new LoginPage(driver);
 	}
 
+	
+	
 }

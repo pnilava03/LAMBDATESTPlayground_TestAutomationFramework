@@ -21,6 +21,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
+
 /**
  * @author NILAVA PAL
  */
@@ -66,60 +67,50 @@ public class Listener implements ITestListener {
 	}
 
 	@Override
-	public void onTestSuccess(ITestResult result){
-		//extentTest = extentReports.createTest(result.getName());
+	public void onTestSuccess(ITestResult result) {
+		// extentTest = extentReports.createTest(result.getName());
 		report = new Reports();
 		if (result.getStatus() == ITestResult.SUCCESS) {
 			extentTest.log(Status.PASS, "PASS");
-			extentTest=ExtentCucumberAdapter.getCurrentStep();
+			extentTest = ExtentCucumberAdapter.getCurrentStep();
 			System.out.println("Current Step name is:: " + extentTest.toString());
-			try {
-				extentTest.pass(result.getName(), MediaEntityBuilder
-						.createScreenCaptureFromPath(report.captureScreenshot(result.getName())).build());
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			
+
+			extentTest.pass(result.getName(),
+					MediaEntityBuilder.createScreenCaptureFromPath(report.captureScreenshot(result.getName())).build());
+
 		}
-		
-		driver.close();
-		
+
+	
+
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
-		
+
 		report = new Reports();
 		if (result.getStatus() == ITestResult.FAILURE) {
 			extentTest.log(Status.FAIL, "FAIL  " + result.getThrowable());
 
-			try {
-				extentTest.fail(result.getName(), MediaEntityBuilder
-						.createScreenCaptureFromPath(report.captureScreenshot(result.getName())).build());
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+			extentTest.fail(result.getName(),
+					MediaEntityBuilder.createScreenCaptureFromPath(report.captureScreenshot(result.getName())).build());
 
 		}
 
-		driver.close();
+		
 
 	}
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
-	//	extentTest = extentReports.createTest(result.getName());
+		// extentTest = extentReports.createTest(result.getName());
 		if (result.getStatus() == ITestResult.SKIP) {
 			extentTest.log(Status.SKIP, "SKIP");
-			try {
-				extentTest.skip(result.getName(), MediaEntityBuilder
-						.createScreenCaptureFromPath(report.captureScreenshot(result.getName())).build());
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+
+			extentTest.skip(result.getName(),
+					MediaEntityBuilder.createScreenCaptureFromPath(report.captureScreenshot(result.getName())).build());
 
 		}
-		driver.close();
+		
 	}
 
 	@Override
@@ -130,12 +121,10 @@ public class Listener implements ITestListener {
 
 	@Override
 	public void onFinish(ITestContext context) {
-		
-	
+
 		extentReports.flush();
-	
+
 		driver.quit();
-		
 
 	}
 

@@ -33,7 +33,7 @@ public class Reports {
 	 * @return extentReports
 	 * @throws EnvironmentTypeNotFoundException
 	 */
-	public static ExtentReports generateExtentReport() throws EnvironmentTypeNotMatchException {
+	public static ExtentReports generateExtentReport() {
 		try {
 			prop = new PropertiesFile(AppConstant.EXTENT_FILE_NAME);
 		} catch (FileNotFoundException e) {
@@ -140,7 +140,7 @@ public class Reports {
 	 * @throws IOException
 	 */
 
-	public String captureScreenshot(String screenshotName) throws IOException {
+	public String captureScreenshot(String screenshotName) {
 		File srcPath = ((TakesScreenshot) DriverFactory.getDriver()).getScreenshotAs(OutputType.FILE);
 		File destPath = new File(AppConstant.PROJECT_PATH + "\\reportsLib\\screenShots\\" + screenshotName + "_"
 				+ System.currentTimeMillis() + ".png");
@@ -152,8 +152,12 @@ public class Reports {
 
 			e.printStackTrace();
 		}
-
+		
+		try {
 		ExtentCucumberAdapter.addTestStepScreenCaptureFromPath(absPath);
+		}catch (IOException e) {
+			e.printStackTrace();
+		}
 		ExtentCucumberAdapter.addTestStepLog("<span style='background-color:rgb(0,102,255)>");
 
 		return absPath;

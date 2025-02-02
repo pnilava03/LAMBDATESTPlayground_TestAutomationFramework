@@ -3,6 +3,7 @@
  */
 package com.LAMBDATEST_Playground.POM;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,6 +15,8 @@ public class LoginPage extends PageUtility{
 
 	private WebDriver driver;
 	//private LTPlayground_accountPage accountpage;
+	
+	
 	public LoginPage(WebDriver driver) {
 		super(driver);
 		this.driver=driver;
@@ -65,13 +68,7 @@ public class LoginPage extends PageUtility{
 		return ClickOnLoginButton;
 	}
 	
-	private final String myAccount_xpath="(//div[@id='content']/div/h2)[1]";
-	@FindBy(xpath = myAccount_xpath)
-	private WebElement myAccountText;
 	
-	public WebElement getmyAccountText() {
-		return myAccountText;
-	}
 	
 	public MyAccountPage getMyAccountPage() {
 		

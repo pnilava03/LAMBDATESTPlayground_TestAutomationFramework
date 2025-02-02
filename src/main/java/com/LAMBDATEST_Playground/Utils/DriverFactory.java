@@ -47,7 +47,7 @@ public class DriverFactory {
 	 *                                          and it will return getDriver()
 	 */
 	private WebDriver setBrowser(String browserName)
-			throws BrowserNotFoundException, FileNotFoundException, EnvironmentTypeNotMatchException {
+			throws FileNotFoundException{
 
 		switch (browserName.trim().toLowerCase()) {
 		case "chrome":
@@ -126,7 +126,7 @@ public class DriverFactory {
 	 */
 	
 	protected WebDriver init_Driver(String browserName)
-			throws FileNotFoundException, BrowserNotFoundException, EnvironmentTypeNotMatchException {
+			throws FileNotFoundException {
 		return setBrowser(browserName);
 	}
 }
