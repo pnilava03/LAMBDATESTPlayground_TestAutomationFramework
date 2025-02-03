@@ -15,3 +15,4 @@ Feature: User is on Login Page
     And user click on the "Login" button
     Then user navigate to "Account" page
     Then user will able to see "My Account" text
+    And user can see the "My Orders" text

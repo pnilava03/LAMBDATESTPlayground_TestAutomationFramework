@@ -23,9 +23,9 @@ public class MyAccountPage extends AccountPage{
 	}
 
 
-	public String getMyAccountText(String element) {
+	public String getMyAccountText(String expectedValue) {
 		
-		return driver.findElement(By.xpath("//div[@id='content']/div/h2[text()='"+element+"']")).getText();
+		return driver.findElement(By.xpath("//div[@id='content']/div/h2[text()='"+expectedValue+"']")).getText();
 	}
 	
 	

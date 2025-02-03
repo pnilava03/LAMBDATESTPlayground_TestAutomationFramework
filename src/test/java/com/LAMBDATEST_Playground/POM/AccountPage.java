@@ -52,8 +52,8 @@ public class AccountPage  extends PageUtility{
 	
 	
 	//return my Orders page elements
-//	public MyOrdersPage getMyOrderPages() {
-//		
-//		return new MyOrdersPage(driver, accountText);
-//	}
+	public MyOrdersPage getMyOrderPages() {
+		
+		return new MyOrdersPage(driver);
+	}
 }

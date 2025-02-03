@@ -27,11 +27,9 @@ import io.cucumber.java.en.When;
 public class LoginSteps {
 
 	private WebDriver driver;
-//	private DashboardPage dashboardPage;
-//	private RegisterAccountPage registerAccountPage;
 	private LoginPage loginpage;
 	private AccountPage accountPage;
-	private MyAccountPage myAccountPage;
+	//private MyAccountPage myAccountPage;
 	
 
 	@When("user clicks on the {string} button")
@@ -104,6 +102,14 @@ public class LoginSteps {
 	public void user_will_able_to_see_text(String expectedText) throws InterruptedException {
 		Thread.sleep(2000);
 		String actualText=accountPage.getMyAccountPage().getMyAccountText(expectedText);
+		Assert.assertEquals(expectedText, actualText);
+	}
+	
+
+	@Then("user can see the {string} text")
+	public void user_can_see_the_text(String expectedText) throws InterruptedException {
+		Thread.sleep(2000);
+		String actualText=accountPage.getMyOrderPages().getMyOrderText(expectedText);
 		Assert.assertEquals(expectedText, actualText);
 	}
 
