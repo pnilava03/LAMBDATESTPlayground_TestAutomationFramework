@@ -3,6 +3,7 @@
  */
 package com.LAMBDATEST_Playground;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 /**
@@ -13,6 +14,8 @@ public class Checking {
 	/**
 	 * @param args
 	 */
+	
+	private static WebDriver driver;
 	public static void main(String[] args) {
 		
 		
@@ -23,6 +26,7 @@ public class Checking {
 		
 		System.out.println("Hello");
 		System.out.println("Hello");
+		driver.findElement(By.xpath("")).sendKeys("");
 		
 		
 

@@ -11,13 +11,13 @@ import org.openqa.selenium.WebElement;
 /**
  * 
  */
-public class MyAccountPage extends AccountPage{
+public class MyAccountSection extends AccountPage{
 	
 	
 	private WebDriver driver;
 	
 
-	public MyAccountPage(WebDriver driver) {
+	public MyAccountSection(WebDriver driver) {
 		super(driver);
 		this.driver=driver;
 	}

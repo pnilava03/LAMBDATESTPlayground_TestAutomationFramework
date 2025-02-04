@@ -12,7 +12,7 @@ import io.cucumber.testng.CucumberOptions;
 
 
 
-@CucumberOptions(tags = "@onlythis", 
+@CucumberOptions(tags = "@runThis", 
 features ="resourcesLibs/features",
 glue = {"com.LAMBDATEST_Playground.stepDefinations"}, 
 plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},

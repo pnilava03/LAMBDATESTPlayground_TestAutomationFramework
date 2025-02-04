@@ -67,12 +67,19 @@ public class LoginPage extends PageUtility{
 	public WebElement getClickOnLoginButton() {
 		return ClickOnLoginButton;
 	}
-	
-	
-	
-	public MyAccountPage getMyAccountPage() {
 		
-		return new MyAccountPage(driver);
+	public AccountPage getAccountPage() {
+		
+		return new AccountPage(driver);
+	}
+	
+	public AccountPage loginToApplication(String URL,String username, String password) {
+		driver.get(URL);
+		getEnterEmailId().sendKeys(username);
+		getEnterPassword().sendKeys(password);
+		getClickOnLoginButton().click();
+		return getAccountPage();
+		
 	}
 	
 }

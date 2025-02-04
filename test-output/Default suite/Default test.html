@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Feb 02 20:01:25 IST 2025</td>
+<td>Started on:</td><td>Tue Feb 04 20:55:51 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>3 seconds (3760 ms)</td>
+<tr><td>Total time:</td><td>2 seconds (2884 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,12 +75,23 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.LAMBDATEST_Playground.Runner.Runner.runScenario()'><b>runScenario</b><br>Test class: com.LAMBDATEST_Playground.Runner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "user on Login page and trying to login to the application", "User is on Login Page"</td>
-<td><div><pre>io.cucumber.testng.UndefinedStepException: The step &apos;user will able to see &quot;My Account&quot; text&apos; is undefined.
-You can implement this step using the snippet(s) below:
+<td title='com.LAMBDATEST_Playground.Runner.Runner.runScenario()'><b>runScenario</b><br>Test class: com.LAMBDATEST_Playground.Runner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "1. Login to the Lambda Test playgorund application and verify  mouse hover menu content from menu bar", "Login in to the application and verify mouse hover menu content"</td>
+<td><div><pre>io.cucumber.testng.UndefinedStepException: The step &apos;Login to the application&apos; and 1 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
 
-@Then(&quot;user will able to see {string} text&quot;)
-public void user_will_able_to_see_text(String string) {
+@Given(&quot;Login to the application&quot;)
+public void login_to_the_application(io.cucumber.datatable.DataTable dataTable) {
+    // Write code here that turns the phrase above into concrete actions
+    // For automatic transformation, change DataTable to one of
+    // E, List&lt;E&gt;, List&lt;List&lt;E&gt;&gt;, List&lt;Map&lt;K,V&gt;&gt;, Map&lt;K,V&gt; or
+    // Map&lt;K, List&lt;V&gt;&gt;. E,K,V must be a String, Integer, Float,
+    // Double, Byte, Short, Long, BigInteger or BigDecimal.
+    //
+    // For other transformations you can register a DataTableType.
+    throw new io.cucumber.java.PendingException();
+}
+@Then(&quot;verify mouse hover menu content from menu bar&quot;)
+public void verify_mouse_hover_menu_content_from_menu_bar() {
     // Write code here that turns the phrase above into concrete actions
     throw new io.cucumber.java.PendingException();
 }
@@ -121,12 +132,23 @@ public void user_will_able_to_see_text(String string) {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1783463798", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1783463798'><pre>io.cucumber.testng.UndefinedStepException: The step &apos;user will able to see &quot;My Account&quot; text&apos; is undefined.
-You can implement this step using the snippet(s) below:
+</pre></div><a href='#' onClick='toggleBox("stack-trace420993295", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace420993295'><pre>io.cucumber.testng.UndefinedStepException: The step &apos;Login to the application&apos; and 1 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
 
-@Then(&quot;user will able to see {string} text&quot;)
-public void user_will_able_to_see_text(String string) {
+@Given(&quot;Login to the application&quot;)
+public void login_to_the_application(io.cucumber.datatable.DataTable dataTable) {
+    // Write code here that turns the phrase above into concrete actions
+    // For automatic transformation, change DataTable to one of
+    // E, List&lt;E&gt;, List&lt;List&lt;E&gt;&gt;, List&lt;Map&lt;K,V&gt;&gt;, Map&lt;K,V&gt; or
+    // Map&lt;K, List&lt;V&gt;&gt;. E,K,V must be a String, Integer, Float,
+    // Double, Byte, Short, Long, BigInteger or BigDecimal.
+    //
+    // For other transformations you can register a DataTableType.
+    throw new io.cucumber.java.PendingException();
+}
+@Then(&quot;verify mouse hover menu content from menu bar&quot;)
+public void verify_mouse_hover_menu_content_from_menu_bar() {
     // Write code here that turns the phrase above into concrete actions
     throw new io.cucumber.java.PendingException();
 }
