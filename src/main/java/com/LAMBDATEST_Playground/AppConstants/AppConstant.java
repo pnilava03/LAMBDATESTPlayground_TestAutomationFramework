@@ -21,6 +21,7 @@ public interface AppConstant {
 	public static void sendKeys(CharSequence enterKeys) {}
 	
 	public void hoverTheMouse(AppConstant app, WebElement element);
+	public AppConstant hoverTheMouse(String strategyType, WebElement element);
 
 	
 }

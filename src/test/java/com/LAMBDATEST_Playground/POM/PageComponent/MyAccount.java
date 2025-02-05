@@ -31,6 +31,9 @@ public class MyAccount extends AccountPage {
 		return myAccountMenu;
 	}
 
+	public String toString() {
+		return getMyAccountMenu().getText();
+	}
 	
 
 }

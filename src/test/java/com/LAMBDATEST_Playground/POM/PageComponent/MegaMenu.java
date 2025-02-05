@@ -32,6 +32,9 @@ public class MegaMenu extends AccountPage{
 	}
 
 	
+	public String toString() {
+		return getMegaMenu().getText();
+	}
 
 	
 	

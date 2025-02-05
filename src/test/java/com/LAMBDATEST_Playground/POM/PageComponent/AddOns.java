@@ -29,7 +29,9 @@ public class AddOns extends AccountPage {
 		return addOnsMenu;
 	}
 
-	
+	public String toString() {
+		return getAddOnsMenu().getText();
+	}
 	
 	
 

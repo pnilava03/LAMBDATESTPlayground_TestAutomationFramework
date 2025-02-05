@@ -50,17 +50,29 @@ public class VerifyMouseHoverMenuContent {
 
 	}
 
+
+		//This is the show case of dynamic strategy implementation
 	@Then("verify mouse hover menu content from menu bar")
 	public void verify_mouse_hover_menu_content_from_menu_bar() throws InterruptedException {
-		accountPage.hoverTheMouse(new MegaMenu(driver), 
-				accountPage.getMegaMenuBar().getMegaMenu());
+		Thread.sleep(1500);
+		accountPage.hoverTheMouse(new MegaMenu(driver), accountPage.getMegaMenuBar().getMegaMenu());
 		Thread.sleep(3000);
-		accountPage.getAddOnsMenuBar().hoverTheMouse(new AddOns(driver),
-				accountPage.getAddOnsMenuBar().getAddOnsMenu());
+		accountPage.hoverTheMouse(new AddOns(driver), accountPage.getAddOnsMenuBar().getAddOnsMenu());
 		Thread.sleep(3000);
-		accountPage.getAddOnsMenuBar().hoverTheMouse(new MyAccount(driver),
-				accountPage.getMyAccountMenuBar().getMyAccountMenu());
+		accountPage.hoverTheMouse(new MyAccount(driver), accountPage.getMyAccountMenuBar().getMyAccountMenu());
+		
+	}
 
+	//This is the show case of factory strategy implementation
+	@Then("verify mouse hover menu content from menu bar {string}, {string} and {string}")
+	public void verify_mouse_hover_menu_content_from_menu_bar_and(String expectedValue1, String expectedValue2,
+			String expectedValue3) throws InterruptedException {
+		Thread.sleep(3000);
+		accountPage.hoverTheMouse(expectedValue1, accountPage.getMegaMenuBar().getMegaMenu());
+		Thread.sleep(3000);
+		accountPage.hoverTheMouse(expectedValue2, accountPage.getAddOnsMenuBar().getAddOnsMenu());
+		Thread.sleep(3000);
+		accountPage.hoverTheMouse(expectedValue3, accountPage.getMyAccountMenuBar().getMyAccountMenu());
 	}
 
 }
