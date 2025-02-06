@@ -7,7 +7,9 @@ import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.Map;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import com.LAMBDATEST_Playground.POM.AccountPage;
 import com.LAMBDATEST_Playground.POM.LoginPage;
@@ -54,8 +56,14 @@ public class VerifyMouseHoverMenuContent {
 		//This is the show case of dynamic strategy implementation
 	@Then("verify mouse hover menu content from menu bar")
 	public void verify_mouse_hover_menu_content_from_menu_bar() throws InterruptedException {
-		Thread.sleep(1500);
+		 boolean b=ActionElement.waitForvisibilityOfElement(driver, 10, accountPage.getMegaMenuBar().getMegaMenu());
+		 System.out.println("waitForvisibilityOfElement method executing:: "+b);
+		
+//		WebElement wb= ActionElement.isElementPresent(driver, 30, accountPage.getMegaMenuBar().getMegaMenu());
+//		accountPage.hoverTheMouse(new MegaMenu(driver),wb);
+		if(b) {
 		accountPage.hoverTheMouse(new MegaMenu(driver), accountPage.getMegaMenuBar().getMegaMenu());
+		}
 		Thread.sleep(3000);
 		accountPage.hoverTheMouse(new AddOns(driver), accountPage.getAddOnsMenuBar().getAddOnsMenu());
 		Thread.sleep(3000);
