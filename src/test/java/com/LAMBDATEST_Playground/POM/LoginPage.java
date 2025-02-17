@@ -77,7 +77,8 @@ public class LoginPage extends PageUtility{
 		driver.get(URL);
 		getEnterEmailId().sendKeys(username);
 		getEnterPassword().sendKeys(password);
-		getClickOnLoginButton().click();
+	//	getClickOnLoginButton().click();
+		getClickOnLoginButton().submit();
 		return getAccountPage();
 		
 	}

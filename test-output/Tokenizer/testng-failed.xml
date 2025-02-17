@@ -9,7 +9,7 @@
       <class name="com.LAMBDATEST_Playground.Runner.Runner">
         <methods>
           <include name="setUpClass"/>
-          <include name="runScenario" invocation-numbers="0"/>
+          <include name="runScenario" invocation-numbers="1"/>
           <include name="tearDownClass"/>
         </methods>
       </class> <!-- com.LAMBDATEST_Playground.Runner.Runner -->

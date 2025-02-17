@@ -49,6 +49,8 @@ public class VerifyMouseHoverMenuContent {
 		String password = data.get(0).get("passWord");
 		loginpage = new LoginPage(driver);
 		accountPage = loginpage.loginToApplication(URL, username, password);
+//		String currentPageURL=ActionElement.getCurrentPageURL();
+//		System.out.println("Current page URL is:: "+currentPageURL);
 
 	}
 

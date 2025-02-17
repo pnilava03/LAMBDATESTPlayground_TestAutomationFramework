@@ -25,7 +25,7 @@ import com.LAMBDATEST_Playground.AppConstants.AppConstant;
  */
 public class ActionElement {
 
-	private WebDriver driver;
+	private static WebDriver driver;
 
 	private ActionElement() {
 
@@ -51,6 +51,11 @@ public class ActionElement {
 	public static String getTitle(WebDriver driver) {
 		return driver.getTitle();
 	}
+	
+	
+	public static String getCurrentPageURL() {
+		return	driver.getCurrentUrl();
+	}
 
 	/**
 	 * this method is responsible hover the mouse
@@ -71,6 +76,9 @@ public class ActionElement {
 	public static String getText(WebElement element) {
 		return element.getText();
 	}
+	
+	
+	
 
 	/**
 	 * 
@@ -116,10 +124,11 @@ public class ActionElement {
 	 * 
 	 * @param driver
 	 * @param element
-	 * @return This method returns a WebElement if the element is present on the UI page within the specified duration.
+	 * @return This method returns a WebElement if the element is present on the UI
+	 *         page within the specified duration.
 	 */
 	public static WebElement waitForElementTobeClickable(WebDriver driver, int time, WebElement element) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(time*1));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(time * 1));
 		return wait.until(ExpectedConditions.elementToBeClickable(element));
 
 	}
@@ -164,25 +173,22 @@ public class ActionElement {
 
 	public static WebElement elementToBeVisible(WebDriver driver, int time, WebElement element) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(time * 1));
-		return wait.until(ExpectedConditions.visibilityOfElementLocated((By)element));
+		return wait.until(ExpectedConditions.visibilityOfElementLocated((By) element));
 
 	}
-	
-	
+
 	public static WebElement isElementPresent(WebDriver driver, int time, WebElement element) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(time * 1));
-		
-	
 		return wait.until(ExpectedConditions.presenceOfElementLocated((By) element));
-		
 
 	}
 
-	
 	public static boolean waitForElementToBeLoad(WebDriver driver, int time, WebElement element) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(time * 1));
 		return wait.until(ExpectedConditions.elementToBeSelected(element));
 
 	}
 
+	
+	
 }

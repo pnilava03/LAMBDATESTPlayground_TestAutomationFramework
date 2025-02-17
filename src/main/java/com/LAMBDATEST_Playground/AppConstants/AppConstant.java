@@ -16,6 +16,7 @@ public interface AppConstant {
 	public static final String REPORTFILE_NAME="LT_Playground_Automation_Report" ;
 	public static final String DOCUMENT_TITLE_NAME="LAMBDATEST PlayGround";
 	public static final String PROJECT_PATH=System.getProperty("user.dir");
+	public static final String testDataFilePath="\\resourcesLibs\\testData\\";
 	
 	
 	public static void sendKeys(CharSequence enterKeys) {}

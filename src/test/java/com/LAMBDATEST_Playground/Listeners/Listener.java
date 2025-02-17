@@ -33,6 +33,7 @@ public class Listener implements ITestListener {
 	ExtentReports extentReports;
 	ExtentTest extentTest;
 	Reports report;
+	
 
 	@Override
 	public void onStart(ITestContext context) {
@@ -68,7 +69,7 @@ public class Listener implements ITestListener {
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
-		// extentTest = extentReports.createTest(result.getName());
+		 extentTest = extentReports.createTest(result.getName());
 		report = new Reports();
 		if (result.getStatus() == ITestResult.SUCCESS) {
 			extentTest.log(Status.PASS, "PASS");
@@ -86,7 +87,7 @@ public class Listener implements ITestListener {
 
 	@Override
 	public void onTestFailure(ITestResult result) {
-
+		 extentTest = extentReports.createTest(result.getName());
 		report = new Reports();
 		if (result.getStatus() == ITestResult.FAILURE) {
 			extentTest.log(Status.FAIL, "FAIL  " + result.getThrowable());
@@ -102,7 +103,7 @@ public class Listener implements ITestListener {
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
-		// extentTest = extentReports.createTest(result.getName());
+		 extentTest = extentReports.createTest(result.getName());
 		if (result.getStatus() == ITestResult.SKIP) {
 			extentTest.log(Status.SKIP, "SKIP");
 
@@ -121,10 +122,9 @@ public class Listener implements ITestListener {
 
 	@Override
 	public void onFinish(ITestContext context) {
-
+		ldriver= new Driver();	
 		extentReports.flush();
-
-		driver.quit();
+		ldriver.quitBrowser();
 
 	}
 

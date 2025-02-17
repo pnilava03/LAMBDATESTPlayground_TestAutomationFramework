@@ -44,8 +44,11 @@ public class PropertiesFile {
 	}
 
 	public String getPropertiesValue(String key) {
+		if(key==null) {
+		throw new NullPointerException("Please specify the key in testConfig Properties file::"+key);
+	}else {
 		return prop.getProperty(key);
-
+		}
 	}
 
 }
