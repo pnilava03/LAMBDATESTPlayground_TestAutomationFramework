@@ -131,7 +131,7 @@ public class Driver {
 		switch (prop.getPropertiesValue("EnvType").trim().toLowerCase()) {
 		case "dev":
 			if (EnvironmentTypes.Dev.toString().equalsIgnoreCase(prop.getPropertiesValue("EnvType"))) {
-				driver.get(url);
+				navigateTO(url);
 
 			} else {
 
@@ -143,7 +143,7 @@ public class Driver {
 
 		case "test":
 			if (EnvironmentTypes.Test.toString().equalsIgnoreCase(prop.getPropertiesValue("EnvType"))) {
-				driver.get(url);
+				navigateTO(url);
 			} else {
 
 				throw new EnvironmentTypeNotMatchException("Opps !!! Env type:: " + prop.getPropertiesValue("EnvType")
@@ -153,7 +153,7 @@ public class Driver {
 			break;
 		case "stage":
 			if (EnvironmentTypes.Stage.toString().equalsIgnoreCase(prop.getPropertiesValue("EnvType"))) {
-				driver.get(url);
+				navigateTO(url);
 			} else {
 
 				throw new EnvironmentTypeNotMatchException("Opps !!! Env type:: " + prop.getPropertiesValue("EnvType")
@@ -164,7 +164,7 @@ public class Driver {
 
 		case "prod":
 			if (EnvironmentTypes.Prod.toString().equalsIgnoreCase(prop.getPropertiesValue("EnvType"))) {
-				driver.get(url);
+				navigateTO(url);
 			} else {
 				throw new EnvironmentTypeNotMatchException("Opps !!! Env type:: " + prop.getPropertiesValue("EnvType")
 						+ " is not match, please specify the proper Env type ");
@@ -225,5 +225,13 @@ public class Driver {
 
 	}
 	
+	/**
+	 * this methods Synonym for driver.get(String url);
+	 * @param url
+	 */
+	private void navigateTO(String url) {
+		driver.navigate().to(url);
+		
+	}
 	
 }
